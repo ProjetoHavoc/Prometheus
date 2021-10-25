@@ -60,6 +60,18 @@ bind-address             = 0.0.0.0
 systemctl restart mariadb
 
 
+On your server run mysql from command line:
+
+mysql -u root -p -h localhost -P 3306
+
+Then run this command in mysql shell:
+
+>use mysql
+>GRANT ALL ON *.* to root@'%' IDENTIFIED BY 'yourpassword';
+>FLUSH PRIVILEGES;
+
+
+
 
 
 
