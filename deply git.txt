@@ -1,0 +1,13 @@
+
+
+criar uma pasta chamada repositorio do lado da pasta do projeto dentro do servidor
+
+mkdir repositorio
+
+entrar na pasta repositorio
+
+cd repositorio
+
+usar comando git init dentro da pasta repositorio
+
+git init --bare
