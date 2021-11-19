@@ -43,16 +43,6 @@ $ pip install wheel
 
 pip install mysqlclient
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.mysql', 
-        'NAME': 'databaseName', #nome do banco de dados
-        'USER': 'databaseUser', #nome do usuario do banco de dados
-        'PASSWORD': 'databasePassword', # senha do banco de dados
-        'HOST': 'localhost', #ip do banco de dados
-        'PORT': 'portNumber', #porta do banco de dados --mysql 3306
-    }
-}
 
 
 comandos basicos Django
