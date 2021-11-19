@@ -14,44 +14,11 @@ from blog_comentarios.forms import FormComentario
 from blog_comentarios.models import Comentario
 from django.contrib import messages
 
-#class GeeksFormView(FormView):
-    # specify the Form you want to use
- #   form_class = PostForm
-     
-    # specify name of template
-  #  template_name = "geeks / geeksmodel_form.html"
- 
-    # can specify success url
-    # url to redirect after successfully
-    # updating details
-   # success_url ="/thanks/"
 
-
-class PostCreate(CreateView):
-
-    model = Post
-    form_class = PostForm
-    #fields = ['titulo_post', 'excerto_post', 'conteudo_post', 'autor_post', 'categoria_post', 'imagem_post']
-    template_name = 'blog_posts/novo_post.html'
-    success_url ="/"
-
-
-class PostUpdateView(UpdateView):
-    
-    model = Post
-    
-    fields = ['titulo_post', 'excerto_post', 'conteudo_post', 'autor_post', 'categoria_post', 'imagem_post']
-    template_name = 'blog_posts/editar_post.html'
-    success_url ="/"
-
-class PostDeleteView(DeleteView):  
-    model = Post  
-    template_name = 'blog_posts/deletar_post.html'
-    success_url ="/"
 
 
 class PostIndex(ListView):
-
+    
    model = Post #model usado para preencher 
    template_name = 'blog_posts/blog_index.html'#direcionando para o template
    paginate_by = 3 # quantos posts vao ficar na pagina
@@ -74,7 +41,6 @@ class PostIndex(ListView):
        )
 
        return qs
-
 class PostBusca(PostIndex):
 
     template_name = 'blog_posts/posts_busca.html'#direcionando para o template
@@ -165,3 +131,24 @@ class PostDetalhes(UpdateView):
 
        
         
+class PostCreate(CreateView):
+    
+    model = Post
+    form_class = PostForm
+    #fields = ['titulo_post', 'excerto_post', 'conteudo_post', 'autor_post', 'categoria_post', 'imagem_post']
+    template_name = 'blog_posts/novo_post.html'
+    success_url ="/"
+
+
+class PostUpdateView(UpdateView):
+    
+    model = Post
+    form_class = PostForm
+    #fields = ['titulo_post', 'excerto_post', 'conteudo_post', 'autor_post', 'categoria_post', 'imagem_post']
+    template_name = 'blog_posts/editar_post.html'
+    success_url ="/"
+
+class PostDeleteView(DeleteView):  
+    model = Post  
+    template_name = 'blog_posts/deletar_post.html'
+    success_url ="/"        

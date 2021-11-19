@@ -1,4 +1,7 @@
 {% extends 'base.html' %}
+{% load crispy_forms_tags %}
+{% load static %}
+
 
 {% block content %}
 
@@ -82,7 +85,7 @@
 
                                         <table class="table">
                                             
-                                            {{ form }}
+                                            {{ form|crispy }}
 
                                             <tr>
                                                 <td colspan="2">

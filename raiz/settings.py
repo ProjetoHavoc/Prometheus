@@ -52,7 +52,7 @@ INSTALLED_APPS = [
 
     # terceiros apps
     'django_summernote',
-    #'crispy_forms',
+    'crispy_forms',
 
 ]
 
@@ -90,12 +90,24 @@ WSGI_APPLICATION = 'raiz.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
+
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.mysql', 
+        'NAME': 'djangoDB', #nome do banco de dados
+        'USER': 'root', #nome do usuario do banco de dados
+        'PASSWORD': 'C9p513', # senha do banco de dados
+        'HOST': '172.17.0.101', #ip do banco de dados
+        'PORT': '3306', #porta do banco de dados --mysql 3306
     }
 }
+
+#DATABASES = {
+#    'default': {
+#        'ENGINE': 'django.db.backends.sqlite3',
+#        'NAME': BASE_DIR / 'db.sqlite3',
+#    }
+#}
 
 
 # Password validation
