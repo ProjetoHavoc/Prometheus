@@ -10,3 +10,9 @@ def PrincipalIndex(request):
    
 
     return render(request, 'principal/index.html', {'posts':posts})
+
+
+def Sobre(request):
+
+
+    return render(request, 'principal/sobre.html')

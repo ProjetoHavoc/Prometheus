@@ -40,14 +40,26 @@
                         <h4 class="widget_title">Categorias</h4>
                         <ul class="list cat-list">
                             <li>
-                                <a href="#" class="d-flex">
+                                <a href="{% url 'animes' %}" class="d-flex">
                                     <p>Animes</p>
                                     <p>({{ post.numero_comentarios }})</p>
                                 </a>
                             </li>
                             <li>
-                                <a href="#" class="d-flex">
+                                <a href="{% url 'tecnologia' %}" class="d-flex">
                                     <p>Tecnologia</p>
+                                    <p>({{ post.numero_comentarios }})</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="{% url 'tutoriais' %}" class="d-flex">
+                                    <p>Tutoriais</p>
+                                    <p>({{ post.numero_comentarios }})</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="{% url 'games' %}" class="d-flex">
+                                    <p>Games</p>
                                     <p>({{ post.numero_comentarios }})</p>
                                 </a>
                             </li>

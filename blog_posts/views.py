@@ -83,7 +83,7 @@ class PostCategoria(PostIndex):
             return qs
 
         qs = qs.filter(categoria_post__nome_categoria__iexact=categoria)    
-        # o filtro acima busca a chave estrangeira categoria e em seguida com o __ busca o campo e en seguda __ o iexact faz a busca sem case sensitive
+        # o filtro acima busca a chave estrangeira categoria e em seguida com o __ busca o campo e en seguida __ o iexact faz a busca sem case sensitive
 
 
         return qs

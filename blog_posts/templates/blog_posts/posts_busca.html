@@ -9,50 +9,153 @@
 <!-- CONTENT -->
 {% block content %}
 
-        <div class="card-columns mt-4">
+<!--================Blog Area =================-->
+<section class="blog_area section-padding">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 mb-5 mb-lg-0">
+                
+                                
+                <div class="blog_left_sidebar">
+                                            
+                    {% for post in posts %}
 
-                <!-- FOR LOOP -->
-                {% for post in posts %}<!-- a varialvel post faz referencia ao que deve ser usado no html e o pots ta sendo trazido da viewr com a pesquisa-->
-                        <div class="card">
-                         {% if post.imagem_post %}   
-                                <a href="{% url 'post_detalhes' post.id %}">
-                                    <img class="card-img-top"
-                                            src="{{ post.imagem_post.url }}"
-                                            alt="{{ post.titulo_post }}">
-                                </a>
-                          {% endif %}      
-
-                        <div class="card-body">
-                            <h5 class="card-title">
-                                <a href="{% url 'post_detalhes' post.id %}">
-                                    {{ post.titulo_post }}
-                                </a>
-                            </h5>
-                            <p class="card-text">{{ post.exerto_post }}</p>
-                            <p class="card-text">
-
-                                <small class="text-muted">
-
+                    <article class="blog_item">
+                        <div class="blog_item_img">
+                            <img class="card-img rounded-0" src="{{ post.imagem_post.url }}" alt="">
+                            <a href="#" class="blog_item_date">
+                            
                                     {{ post.data_post|naturalday|title }}<!--usa o metodo humanize referenciado no instal apps para formatar a data-->
-                                    |
-                                    {{ post.numero_comentarios }} Comentário(s)
-                                    <!-- esse jeito abaixo apenas conta quantos comentarios tem o post o no acima separa os comentarios publicados ou não-->
-                                    <!--{{ post.comentario_set.count }} Comentário(s)<!-- conta e mostra quantos comentarios existem pra determinado post, obs:comentario é um foreidkey -->
-                                    |
-                                    {{ post.categoria_post }}<!--lista e associa a categoria cadastrada pra determinadado post, obs: categoria é um foreidkey -->
+                          
+                            </a>
+                        </div>
 
-                                </small>
+                        <div class="blog_details">
+                            <a class="d-inline-block" href="{% url 'post_detalhes' post.id %}">
+                                <h2>{{ post.titulo_post }}</h2>
+                            </a>
+                            <p>{{ post.exerto_post }}</p>
+                            <ul class="blog-info-link">
+                                <li><a href="#"><i class="fa fa-user"></i> Autor: {{ post.autor_post }}</a></li>
+                                <li><a href="#"><i class="fa fa-spinner fa-spin fa-3x fa-fw"></i>Categoria: {{ post.categoria_post }}</a></li>
+                                
+                                <li><a href="#"><i class="fa fa-comments"></i> {{ post.numero_comentarios }} Comentário(s)</a></li>
+                            </ul>
+                        </div>
+                    </article>
+                    {% endfor %}
+                    <nav class="blog-pagination justify-content-center d-flex">
+                        <ul class="pagination">
+                            <li class="page-item">
+                                <a href="#" class="page-link" aria-label="Previous">
+                                    <i class="ti-angle-left"></i>
+                                </a>
+                            </li>
+                            <li class="page-item">
+                                <a href="#" class="page-link">1</a>
+                            </li>
+                            <li class="page-item active">
+                                <a href="#" class="page-link">2</a>
+                            </li>
+                            <li class="page-item">
+                                <a href="#" class="page-link" aria-label="Next">
+                                    <i class="ti-angle-right"></i>
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
 
-                            </p>
-
-                            <div class="text-right">
-                                <a href="{% url 'post_detalhes' post.id %}" class="btn btn-outline-secondary">Ler mais...</a>
+            </div>
+            <div class="col-lg-4">
+                <div class="blog_right_sidebar">
+                    <aside class="single_sidebar_widget search_widget">
+                        <form action="{% url 'post_busca' %}">
+                            <div class="form-group">
+                                <div class="input-group mb-3">
+                                    <input name="termo" value="{{ request.GET.termo }}" class="form-control mr-sm-2" type="search" placeholder="Pesquisar"
+                                        onfocus="this.placeholder = ''"
+                                        onblur="this.placeholder = 'Pesquisar'">
+                                   
+                                </div>
                             </div>
-                        </div>
-                        </div>
-                <!--/FOR LOOP-->
-                {% endfor %}
+                            <button class="button rounded-0 primary-bg text-white w-100 btn_1 boxed-btn"
+                                type="submit">Buscar</button>
+                        </form>
+                    </aside>
+
+                  
+                    <aside class="single_sidebar_widget post_category_widget">
+                        <h4 class="widget_title">Categorias</h4>
+                        <ul class="list cat-list">
+                            <li>
+                                <a href="#" class="d-flex">
+                                    <p>Animes</p>
+                                    <p>(37)</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" class="d-flex">
+                                    <p>Tecnologia</p>
+                                    <p>(10)</p>
+                                </a>
+                            </li>
+                           
+                            
+                        </ul>
+                    </aside>
+
+                    <aside class="single_sidebar_widget popular_post_widget">
+                            <h3 class="widget_title">Últimas Postagens</h3>
+                        {% for post in posts %}<!-- a varialvel post faz referencia ao que deve ser usado no html e o pots ta sendo trazido da viewr com a pesquisa-->
+                            <div class="card">
+                                {% if post.imagem_post %}   
+                                    <a href="{% url 'post_detalhes' post.id %}">
+                                        <img class="card-img-top"
+                                                src="{{ post.imagem_post.url }}"
+                                                alt="{{ post.titulo_post }}">
+                                    </a>
+                                {% endif %}      
+                
+                                <div class="card-body">
+                                <h5 class="card-title">
+                                    <a href="{% url 'post_detalhes' post.id %}">
+                                        {{ post.titulo_post }}
+                                    </a>
+                                </h5>
+                                <p class="card-text">{{ post.exerto_post }}</p>
+                                <p class="card-text">
+                
+                                    <small class="text-muted">
+                
+                                        {{ post.data_post|naturalday|title }}<!--usa o metodo humanize referenciado no instal apps para formatar a data-->
+                                        |
+                                        {{ post.numero_comentarios }} Comentário(s)
+                                        <!-- esse jeito abaixo apenas conta quantos comentarios tem o post o no acima separa os comentarios publicados ou não-->
+                                        <!--{{ post.comentario_set.count }} Comentário(s)<!-- conta e mostra quantos comentarios existem pra determinado post, obs:comentario é um foreidkey -->
+                                        |
+                                        {{ post.categoria_post }}<!--lista e associa a categoria cadastrada pra determinadado post, obs: categoria é um foreidkey -->
+                
+                                    </small>
+                
+                                </p>
+                
+                                </div>
+                            </div>
+
+                        {% endfor %}    
+                     </aside>    
+                
+                        
+                    <!--/FOR LOOP-->
+                   
+                </div>
+            </div>
         </div>
+    </div>
+</section>
+<!--================Blog Area =================-->
+
 
 <!--/CONTENT-->
 {% endblock %}
