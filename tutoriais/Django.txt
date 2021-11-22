@@ -33,12 +33,12 @@ se nao instalaremos manualmente
 
 $ pip install django
 
-
+pip install wheel
 $ pip install django-ckeditor
 $ pip install pillow
 $ pip install django-crispy-forms
 $ pip install bootstrap4
-$ pip install wheel
+pip install django-summernote
 
 
 pip install mysqlclient

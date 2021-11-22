@@ -1,38 +1,45 @@
-<!DOCTYPE html>
-<html lang="pt">
+{% load static %}
+{% load humanize %}
+{% load crispy_forms_tags %}
 
-<head>
+<!--_head.html-->
 
-    <title>{% block titulo %} {% endblock %}Blog do Yuri</title>
-    
-    {% include 'parciais/_head.html' %}
+{% include 'parciais/_head.html' %}
 
-</head>
+<!--_head.html-->
 
 <body>
 
-    {% include 'parciais/_nav.html' %}
+   
+   <!--_nav.html-->
 
-<!-- Page Content -->
-<div class="container">
-    <div class="row">
-        <div class="col-lg-12">
+   {% include 'parciais/_nav.html' %}
 
-            {% block content %}
-                    
-                 
+<!--/_nav.html-->
+ 
+ <!--Titulo--> 
 
-            {% endblock %}
+    {% block title %}  {% endblock %}
 
-            
-        </div>
-    </div>
-    {% include 'parciais/_pagination.html' %}    
-</div>
+<!--Titulo-->
 
-{% include 'parciais/_footer.html' %}
+    
+<!--Conteudo-->
+    {% block content %}
 
+
+
+    {% endblock %}
+<!--Conteudo-->
+
+<!--footer-->
+
+    {% include 'parciais/_footer.html' %}
+
+<!--footer-->  
+        
 </body>
+
 
 
 </html>

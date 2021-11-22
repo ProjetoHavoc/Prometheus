@@ -21,7 +21,7 @@ class PostIndex(ListView):
     
    model = Post #model usado para preencher 
    template_name = 'blog_posts/blog_index.html'#direcionando para o template
-   paginate_by = 3 # quantos posts vao ficar na pagina
+   paginate_by = 6 # quantos posts vao ficar na pagina
    context_object_name = 'posts'#objeto de busca
 
    #funcao para colocar os posts em ordem do ultimo adicionado(mais recente)
