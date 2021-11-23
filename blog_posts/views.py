@@ -23,21 +23,25 @@ class PostIndex(ListView):
    template_name = 'blog_posts/blog_index.html'#direcionando para o template
    paginate_by = 6 # quantos posts vao ficar na pagina
    context_object_name = 'posts'#objeto de busca
-
+   
    #funcao para colocar os posts em ordem do ultimo adicionado(mais recente)
    def get_queryset(self):
        qs = super().get_queryset()# refazendo o query set com a variavel qs
        qs = qs.order_by('-id').filter(publicado_post=True)#ordenando os posts na variavel qs e faz a busca apenas nos postes publicados
+       
 
        qs = qs.annotate(# parte da funçao que separa os comentarios publicados
+
+          
 
            numero_comentarios=Count( #Count = contar
                Case( #Case = caso
                    When(comentario__publicad_comentario=True, then=1) #when = quando obs : lembrar na hora de refatorar de colocar o nome Publicado_comentario
 
                )
-           )
 
+           )
+            
        )
 
        return qs

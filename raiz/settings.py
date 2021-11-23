@@ -27,7 +27,7 @@ SECRET_KEY = 'django-insecure-^9ei(h67g17e9n^1oi#4fetc_k@%m*t4^ciiy69dc-q^74i9xb
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['172.17.0.140', '192.168.0.99', '127.0.0.1']
+ALLOWED_HOSTS = ['172.17.0.140', '172.17.0.101', '127.0.0.1']
 
 
 # Application definition
@@ -97,7 +97,7 @@ DATABASES = {
         'NAME': 'djangoDB', #nome do banco de dados
         'USER': 'root', #nome do usuario do banco de dados
         'PASSWORD': 'C9p513', # senha do banco de dados
-        'HOST': '172.17.0.140', #ip do banco de dados
+        'HOST': '172.17.0.101', #ip do banco de dados
         'PORT': '3306', #porta do banco de dados --mysql 3306
     }
 }

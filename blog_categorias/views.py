@@ -89,8 +89,7 @@ class Animes(ListView):
 
        return qs
 
-
-
+   
 class Tutoriais(ListView):
 
    model = Post #model usado para preencher 
