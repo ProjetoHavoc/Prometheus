@@ -11,3 +11,9 @@ cd repositorio
 usar comando git init dentro da pasta repositorio
 
 git init --bare
+
+quanto o pull der problema executar o seguinte 
+
+git stash
+git stash drop
+git pull

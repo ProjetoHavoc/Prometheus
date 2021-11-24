@@ -27,6 +27,7 @@ class PostIndex(ListView):
    #funcao para colocar os posts em ordem do ultimo adicionado(mais recente)
    def get_queryset(self):
        qs = super().get_queryset()# refazendo o query set com a variavel qs
+       qs = qs.select_related('categoria_post')
        qs = qs.order_by('-id').filter(publicado_post=True)#ordenando os posts na variavel qs e faz a busca apenas nos postes publicados
        
 
