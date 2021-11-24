@@ -17,3 +17,14 @@ quanto o pull der problema executar o seguinte
 git stash
 git stash drop
 git pull
+
+
+alterando arquivo do nginx
+
+nano /etc/nginx/nginx.conf
+
+
+mudar a linha abaixo para aumentar o tamnho da imagem que pode ser enviada para o servidor
+
+client_max_body_size 100M;
+
