@@ -5,4 +5,4 @@ from django.http import HttpResponse
 
 
 def lockout(request, credentials):
-    return render( request, 'usuarios/erro403.html', status=403)    
+    return render( request, 'administracao/erro403.html', status=403)    

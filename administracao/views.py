@@ -7,10 +7,10 @@ def index(request):
     
    
 
-    return render(request, 'administracao/index.html')
+    return render(request, 'administracao/index-admin.html')
 
 
 def Sobre(request):
 
 
-    return render(request, 'principal/sobre.html')
+    return render(request, 'administracao/erro500.html')

@@ -1,0 +1,55 @@
+{% load static %}
+
+<!--_head.html-->
+    
+{% include 'parciais/admin/_head-admin.html' %}
+
+<!--_head.html-->  
+
+<!--Titulo--> 
+
+{% block title %}  {% endblock %}
+
+<!--Titulo-->
+
+ <!--Conteudo body-->
+<body class="sb-nav-fixed">
+    
+    {% include 'parciais/admin/_nav-admin.html' %}
+
+    <div id="layoutSidenav">
+
+        <div id="layoutSidenav_nav">
+           
+            {% include 'parciais/admin/_lateral-admin.html' %} 
+
+        </div>
+
+        <!--Conteudo-->
+        <div id="layoutSidenav_content">
+
+
+            {% block content %}
+
+
+
+            {% endblock %}
+
+
+        </div>
+        <!--Conteudo-->
+
+    </div>
+
+</body>    
+ <!--Conteudo body-->
+ 
+ 
+<!--footer-->     
+
+{% include 'parciais/admin/_footer-admin.html' %}
+
+<!--footer-->  
+
+    
+
