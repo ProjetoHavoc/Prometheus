@@ -46,6 +46,7 @@ INSTALLED_APPS = [
 
     'usuarios',
     'principal',
+    'administracao',
     'blog_categorias',
     'blog_comentarios',
     'blog_posts',
@@ -65,6 +66,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    #middlewere de segurança de login axes
     'axes.middleware.AxesMiddleware',
 ]
 

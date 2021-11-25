@@ -27,14 +27,14 @@ class Post(models.Model):
 
 
     # metodo responsavel por redimencionar a imagem
-    def save(self, *args, **kwargs):
-        super().save(*args, **kwargs) 
+  #  def save(self, *args, **kwargs):
+  #      super().save(*args, **kwargs) 
 
         self.resize_image(self.imagem_post.name, 800)
 
     # continuação do metodo responsavel por redimencionar a imagem
-    @staticmethod
-    def resize_image(img_name, new_width):
+   # @staticmethod
+   # def resize_image(img_name, new_width):
 
         img_path =  os.path.join(settings.MEDIA_ROOT, img_name)  
 

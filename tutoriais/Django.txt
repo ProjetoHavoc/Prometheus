@@ -40,7 +40,7 @@ $ pip install django-crispy-forms
 $ pip install bootstrap4
 pip install django-summernote
 pip install django-axes
-
+pip install requests
 pip install mysqlclient
 
  --- instal tudo de uma vez ---- pip install django wheel pillow django-crispy-forms bootstrap4 django-summernote mysqlclient
