@@ -1,10 +1,11 @@
 from django.urls import path
-from .views import index, Sobre
+from administracao import views
+from .views import  Sobre
 
 urlpatterns = [
 
 
-    path('', index, name='index'),
+    path('', views.index.as_view(), name='blog_index'),
     path('sobre/', Sobre, name='sobre'),
   
    
