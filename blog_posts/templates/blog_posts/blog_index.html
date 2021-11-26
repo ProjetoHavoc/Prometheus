@@ -38,7 +38,9 @@
                         </a>
                         
                         <div class="blog_item_img">
-                            <img class="card-img rounded-0" src="{{ post.imagem_post.url }}" alt="">
+
+                            <a href="{% url 'post_detalhes' post.id %}"><img class="card-img rounded-0" src="{{ post.imagem_post.url }}" alt=""></a>
+                            
                             <a href="{% url 'post_detalhes' post.id %}" class="blog_item_date">
                             
                                     {{ post.data_post|naturalday|title }}<!--usa o metodo humanize referenciado no instal apps para formatar a data-->

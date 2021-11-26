@@ -84,10 +84,14 @@
                                     </nav>
                                 </div>
 
-                                <form class="form-inline my-2 my-lg-0 ml-lg-4" action="{% url 'post_busca' %}">
+                                <div class="header-right-btn d-none d-lg-block ml-20">
+                                    <a href="{% url 'login' %}" class="sc-add-to-cart btn btn-primary">Login</a>
+                                 </div>
+
+                                <!--<form class="form-inline my-2 my-lg-0 ml-lg-4" action="{% url 'post_busca' %}">
                                     <input name="termo" value="{{ request.GET.termo }}" class="form-control mr-sm-2" type="search" placeholder="Pesquisar"
                                            aria-label="Search">
-                                </form>
+                                </form> -->
                                
 
 

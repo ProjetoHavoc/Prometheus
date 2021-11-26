@@ -24,7 +24,7 @@ tecle enter pra tudo e na hora que aparecer nova senha digite a senha que vc des
 
 agora vamos acessar o banco de dados com o comando
 
-$ mysql -u root
+mysql -u root -p -h localhost -P 3306
 
 para mostrar os bancos de dados 
 
