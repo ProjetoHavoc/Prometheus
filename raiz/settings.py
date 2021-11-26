@@ -101,7 +101,7 @@ DATABASES = {
         'NAME': 'djangoDB', #nome do banco de dados
         'USER': 'root', #nome do usuario do banco de dados
         'PASSWORD': 'C9p513', # senha do banco de dados
-        'HOST': 'localhost', #ip do banco de dados
+        'HOST': '172.17.0.101', #ip do banco de dados
         'PORT': '3306', #porta do banco de dados --mysql 3306
     }
 }
