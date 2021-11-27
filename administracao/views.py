@@ -1,8 +1,7 @@
 
-from django.shortcuts import render, redirect, get_object_or_404
+from django.shortcuts import render,  get_object_or_404
 from blog_posts.models import Post
 from blog_posts.forms import PostForm
-from django.views.generic.list import ListView
 
 
 
@@ -48,7 +47,7 @@ def erro401(request):
 
     return render(request, 'administracao/erro401.html')
 
-def erro403(request, id:id):
+def erro403(request):
 
 
     return render(request, 'administracao/erro403.html')

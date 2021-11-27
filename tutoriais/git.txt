@@ -1,11 +1,15 @@
  instalando o git
 https://git-scm.com/downloads
 
+instalar o git 
+
+apt-get install git
+
 com o git bash aberto digitar  
 
-git config --global user.name "Yuri Menezes"
+git config --global user.name "yurymenezes"
 
-git config --global user.email "projetohavoc@gmail.com"
+git config --global user.email "yurymenezes@hotmail.com"
 
 clear para limpar a tela 
 
@@ -115,6 +119,24 @@ git add *
 
 
  git push -u origin master
+
+
+quanto o pull der problema executar o seguinte 
+
+git stash
+git stash drop
+git pull
+
+
+alterando arquivo do nginx
+
+nano /etc/nginx/nginx.conf
+
+
+mudar a linha abaixo para aumentar o tamnho da imagem que pode ser enviada para o servidor
+
+client_max_body_size 100M;
+
 
 
 
