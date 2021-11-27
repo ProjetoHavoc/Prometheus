@@ -11,26 +11,51 @@
                 <!-- POST -->
                 <main>
 
-                    <div class="header-right-btn d-none d-lg-block ml-20">
-                        <a href="{% url 'novo-post' %}" class="sc-add-to-cart btn btn-primary">Novo Post</a>
-                     </div>
+                   
+
                         <div class="container">
-                            <div class="row pt-5">
+                            
+                            <div class="row pt-5"> 
+                                
                                 <div class="col-xl"></div>
+
                                 <div class="col-xl-8 text-center">
+
+                                    {% if user.is_authenticated %}
+                                  
+                                    <div>
+                                        
+                                        <a href="{% url 'novo-post' %}" class="sc-add-to-cart btn btn-primary">Novo Post</a>
+                                        <a href="{% url 'update-post' post.id %}" class="sc-add-to-cart btn btn-primary">Editar</a>
+                                        <a href="{% url 'delete-post' post.id %}" class="sc-add-to-cart btn btn-danger">Deletar</a>
+
+                                    </div>
+                                    <p></p>
+
+                                    {% endif %}
+                                    
                                     <h2>{{ post.titulo_post }}</h2>
                                     <h5>{{ post.excerto_post }}</h5>
                                     <p class="text-muted mt-4">
                                         <small>
                                             {{ post.autor_post }} | {{ post.data_post }} | {{ post.categoria_post }}
                                         </small>
+                                        
                                     </p>
                                 </div>
-                                <div class="col-xl"></div>
+                                <div class="col-xl">
+                                   
+                                </div>
+                                
                             </div>
 
                             <div class="row pt-5">
-                                <div class="col-xl"></div>
+                                
+                                <div class="col-xl">
+                                                                
+                                    
+                                </div>
+
                                 <div class="col-xl-8">
 
                                     {% if post.imagem_post %}
@@ -102,10 +127,7 @@
                             </div>
                         </div>
 
-
-                        <a href="{% url 'update-post' post.id %}" class="sc-add-to-cart btn btn-primary">Editar</a>
-                        <a href="{% url 'delete-post' post.id %}" class="sc-add-to-cart btn btn-danger">Deletar</a>
-
+                                               
 
             </main>
                 <!-- POST -->

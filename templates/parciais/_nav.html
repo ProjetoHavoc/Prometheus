@@ -31,12 +31,12 @@
                                 </ul>
                             </div>
                             <div class="header-info-right">
-                                <ul class="header-social">    
+                               <!-- <ul class="header-social">    
                                     <li><a href="#"><i class="fab fa-twitter"></i></a></li>
                                     <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
                                     <li><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
                                     <li><a href="#"><i class="fab fa-google-plus-g"></i></a></li>
-                                </ul>
+                                </ul>-->
                             </div>
                         </div>
                     </div>
@@ -52,7 +52,7 @@
                             </div>
                         </div>
                         <div class="col-xl-10 col-lg-10">
-                            <div class="menu-wrapper  d-flex align-items-center justify-content-end">
+                            <div class="menu-wrapper d-flex align-items-center justify-content-end">
                                 <!-- Main-menu -->
                                 <div class="main-menu d-none d-lg-block">
                                     <nav> 
@@ -79,14 +79,29 @@
                                                 </ul>
 
                                             </li>
-                                            <li><a href="#">Contato</a></li>
+
+                                                            
+                                            {% if user.is_authenticated %}
+                                                            
+                                            <li> 
+                                                <li><a href="#">Usuario Logado: {{user.username}}</a></li>          
+                                             
+                                            </li>
+                                                
+                                            <a href="{% url 'logout' %}" class="sc-add-to-cart btn btn-primary">logout</a>
+                                                
+                                            {% else %}
+                                                
+                                                
+                                            <a href="{% url 'login' %}" class="sc-add-to-cart btn btn-primary">Login</a>
+                                            
+                                            {% endif %}
+                                                       
                                         </ul>
                                     </nav>
                                 </div>
 
-                                <div class="header-right-btn d-none d-lg-block ml-20">
-                                    <a href="{% url 'login' %}" class="sc-add-to-cart btn btn-primary">Login</a>
-                                 </div>
+                                
 
                                 <!--<form class="form-inline my-2 my-lg-0 ml-lg-4" action="{% url 'post_busca' %}">
                                     <input name="termo" value="{{ request.GET.termo }}" class="form-control mr-sm-2" type="search" placeholder="Pesquisar"
@@ -94,19 +109,15 @@
                                 </form> -->
                                
 
-
                             </div>
-                        </div> 
-
-                        
-
-
-                        
+                          
+                        </div>                       
 
                         <!-- Mobile Menu -->
                         <div class="col-12">
                             <div class="mobile_menu d-block d-lg-none"></div>
                         </div>
+                        
                     </div>
                 </div>
             </div>

@@ -44,7 +44,6 @@ INSTALLED_APPS = [
 
     # local apps
 
-    'usuarios',
     'principal',
     'administracao',
     'blog_categorias',
@@ -180,7 +179,7 @@ AXES_ENABLED = True #dizendo que o axes esta ativo
 AXES_FAILURE_LIMIT = 5 # numero de tentativas antes de bloquear o usuario
 AXES_ONLY_USER_FAILURES = True # bloqeando apenas o usuario que errou o login
 #AXES_LOCK_OUT_BY_COMBINATION_USER_AND_IP = True # bloqueia nome de usuário e endereço IP.
-AXES_LOCKOUT_CALLABLE = "usuarios.views.lockout"
+AXES_LOCKOUT_CALLABLE = "administracao.views.erro403"
 
 
 from django.contrib.messages import constants
@@ -201,4 +200,4 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 LOGIN_REDIRECT_URL = '/'
 
-LOGOUT_REDIRECT_URL = 'login'
+LOGOUT_REDIRECT_URL = '/'

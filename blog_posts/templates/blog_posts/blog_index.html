@@ -11,12 +11,7 @@
 <main>
     <!--? slider Area Start-->
     <!--================lugar do carrolssel =================-->
-    <!-- slider Area End-->
-
-    
-    <div class="header-right-btn d-none d-lg-block ml-20">
-        <a href="{% url 'novo-post' %}" class="sc-add-to-cart btn btn-primary">Novo Post</a>
-     </div>
+    <!-- slider Area End-->  
      
  
 </main>
@@ -26,6 +21,15 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-8 mb-5 mb-lg-0">
+                
+                {% if user.is_authenticated %}
+      
+                <div class="header-right-btn d-none d-lg-block ml-20">
+                    <a href="{% url 'novo-post' %}" class="sc-add-to-cart btn btn-primary">Novo Post</a>
+                 </div>
+                 <p></p>
+            
+                {% endif %}
                                  
                 <div class="blog_left_sidebar">
                                             

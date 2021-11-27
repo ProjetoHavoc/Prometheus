@@ -140,7 +140,6 @@ class PostCreate(CreateView):
     
     model = Post
     form_class = PostForm
-    #fields = ['titulo_post', 'excerto_post', 'conteudo_post', 'autor_post', 'categoria_post', 'imagem_post']
     template_name = 'blog_posts/novo_post.html'
     success_url ="/"
 
@@ -149,7 +148,6 @@ class PostUpdateView(UpdateView):
     
     model = Post
     form_class = PostForm
-    #fields = ['titulo_post', 'excerto_post', 'conteudo_post', 'autor_post', 'categoria_post', 'imagem_post']
     template_name = 'blog_posts/editar_post.html'
     success_url ="/"
 

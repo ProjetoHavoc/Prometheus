@@ -48,7 +48,7 @@ def erro401(request):
 
     return render(request, 'administracao/erro401.html')
 
-def erro403(request):
+def erro403(request, id:id):
 
 
     return render(request, 'administracao/erro403.html')
